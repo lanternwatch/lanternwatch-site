@@ -1,0 +1,3 @@
+repo/Packages text eol=lf
+repo/Packages.gz binary
+repo/*.ipk binary

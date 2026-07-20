@@ -1,0 +1,16 @@
+Package: lanternwatch
+Version: 0.14.0
+Architecture: all
+Maintainer: LanternWatch <lanternwatchapp@gmail.com>
+Description: Family parental control dashboard for GL.iNet routers
+ Monitor every device on your network, set bedtime and screen time schedules,
+ block social media by profile, and receive push notifications via ntfy,
+ Telegram, or email — all from a mobile-friendly web UI.
+Depends: python3
+Section: extras
+Priority: optional
+Filename: lanternwatch_0.14.0_all.ipk
+Size: 203752
+MD5Sum: efdab2cc8d33f19d601830406dc98d78
+SHA256Sum: 60d486216580c8812ce6ce7e527866be520e79b86a4df87c7b73c61eb26b99bb
+
