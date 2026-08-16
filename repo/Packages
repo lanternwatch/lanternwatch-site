@@ -1,5 +1,5 @@
 Package: lanternwatch
-Version: 0.16.5
+Version: 0.17.0
 Architecture: all
 Maintainer: LanternWatch <lanternwatchapp@gmail.com>
 Description: Family parental control dashboard for GL.iNet routers
@@ -9,7 +9,7 @@ Description: Family parental control dashboard for GL.iNet routers
 Depends: python3
 Section: extras
 Priority: optional
-Filename: lanternwatch_0.16.5_all.ipk
-Size: 226738
-MD5Sum: 2faa910a88b9cd9e20900691974d6284
-SHA256Sum: ad8ced25f228d66a580b25d7977302756854760aac1a657250c23912a7e7845d
+Filename: lanternwatch_0.17.0_all.ipk
+Size: 234522
+MD5Sum: dc9013058f70f4abf483e64442eed42e
+SHA256Sum: 479e482de6c4baa1abb938d78472cf2a5db1a85213e9e09cfe063aca428c5453
