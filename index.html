@@ -23,7 +23,8 @@
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:var(--font);color:var(--body);background:var(--bg);line-height:1.65;-webkit-font-smoothing:antialiased}
+body{font-family:var(--font);color:var(--body);background:var(--bg-soft);line-height:1.65;-webkit-font-smoothing:antialiased}
+.page-frame{max-width:1400px;margin:0 auto;background:var(--bg)}
 h1,h2,h3{color:var(--ink);line-height:1.2;font-weight:700;letter-spacing:-0.02em}
 a{color:var(--orange-dark);text-decoration:none}
 img{max-width:100%;display:block}
@@ -204,6 +205,8 @@ section{padding:56px 0}
 </style>
 </head>
 <body>
+
+<div class="page-frame">
 
 <!-- HEADER -->
 <header>
@@ -526,6 +529,8 @@ section{padding:56px 0}
 <div class="foot-note">Free for every family. Forever. No subscription, no account — Lantern Watch never sees your browsing. · MIT licensed.</div>
 </div>
 </footer>
+
+</div>
 
 <script>
 // Click-to-load videos — privacy-friendly: no YouTube is loaded until the
