@@ -1671,22 +1671,22 @@ l4 7 86 -2 c106 -3 117 -2 132 13 11 10 12 12 12 27 0 12 -2 18 -8 25 -4 6
         <p>Watch setup walkthroughs, full feature tours, and device management guides.</p>
       </div>
       
-      <!-- Video Tabs: Default active is 3-Minute Setup -->
+      <!-- Video Tabs: Default active is What's Under Your Hood (Full Walkthrough) -->
       <div class="video-tabs">
-        <button class="vtab-btn active" onclick="switchVideo('L8lxIdR0IhU', 'Guided 3-Minute Setup Wizard', this)">⚡ 3-Minute Setup</button>
-        <button class="vtab-btn" onclick="switchVideo('2I6Goer9OLY', 'Full Walkthrough', this)">🎬 Full Walkthrough</button>
-        <button class="vtab-btn" onclick="switchVideo('ZVGpAUh5myI', 'AdGuard DNS & Content Filtering', this)">🛡️ Content Filtering</button>
-        <button class="vtab-btn" onclick="switchVideo('_zZauadtvt8', 'Device Controls & Schedules', this)">📱 Devices &amp; Pausing</button>
+        <button class="vtab-btn" onclick="switchVideo('L8lxIdR0IhU', 'Install Walkthrough', this)">⚡ Install Walkthrough</button>
+        <button class="vtab-btn active" onclick="switchVideo('2I6Goer9OLY', 'What\'s Under Your Hood', this)">🎬 What's Under Your Hood</button>
+        <button class="vtab-btn" onclick="switchVideo('ZVGpAUh5myI', '3 Minute Setup', this)">🛡️ 3 Minute Setup</button>
+        <button class="vtab-btn" onclick="switchVideo('_zZauadtvt8', 'Notifications and Filtering', this)">📱 Notifications and Filtering</button>
       </div>
-      
+
       <!-- Video Container -->
       <div class="video-player-container">
         <div class="video-aspect-wrap" id="videoWrapper">
-          <div class="video-poster-overlay" id="videoPoster" style="background-image: url('https://img.youtube.com/vi/L8lxIdR0IhU/maxresdefault.jpg');" onclick="playCurrentVideo()">
+          <div class="video-poster-overlay" id="videoPoster" style="background-image: url('https://img.youtube.com/vi/2I6Goer9OLY/sddefault.jpg');" onclick="playCurrentVideo()">
             <div class="play-btn-circle">
               <svg width="28" height="28" viewBox="0 0 24 24" fill="#ffffff"><path d="M8 5v14l11-7z"/></svg>
             </div>
-            <div class="video-title-tag" id="videoTitleText">Guided 3-Minute Setup Wizard — Click to Play</div>
+            <div class="video-title-tag" id="videoTitleText">What's Under Your Hood — Click to Play</div>
           </div>
         </div>
       </div>
@@ -2287,7 +2287,7 @@ l4 7 86 -2 c106 -3 117 -2 132 13 11 10 12 12 12 27 0 12 -2 18 -8 25 -4 6
 
 <!-- Interactive Video & Contact Script -->
 <script>
-  let currentVideoId = 'L8lxIdR0IhU'; // Default: 3-Minute Setup
+  let currentVideoId = '2I6Goer9OLY'; // Default: What's Under Your Hood
 
   function switchVideo(id, title, btn) {
     currentVideoId = id;
@@ -2296,7 +2296,7 @@ l4 7 86 -2 c106 -3 117 -2 132 13 11 10 12 12 12 27 0 12 -2 18 -8 25 -4 6
     
     const wrapper = document.getElementById('videoWrapper');
     wrapper.innerHTML = `
-      <div class="video-poster-overlay" id="videoPoster" style="background-image: url('https://img.youtube.com/vi/${id}/maxresdefault.jpg');" onclick="playCurrentVideo()">
+      <div class="video-poster-overlay" id="videoPoster" style="background-image: url('https://img.youtube.com/vi/${id}/sddefault.jpg');" onclick="playCurrentVideo()">
         <div class="play-btn-circle">
           <svg width="28" height="28" viewBox="0 0 24 24" fill="#ffffff"><path d="M8 5v14l11-7z"/></svg>
         </div>
