@@ -769,6 +769,36 @@
     background: var(--bg-page);
     border-top: 1px solid var(--line);
   }
+
+  /* Moody family cross-promo strip */
+  .family-strip {
+    background: var(--bg-page);
+    border-top: 1px solid var(--line);
+  }
+  .family-strip-inner {
+    padding: 20px 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 8px 20px;
+    text-align: center;
+    font-size: 0.875rem;
+  }
+  .family-strip-inner .family-label {
+    font-weight: 600;
+    color: var(--ink);
+  }
+  .family-strip-inner a {
+    color: var(--muted);
+    text-decoration: underline;
+    text-decoration-color: var(--line);
+    text-underline-offset: 3px;
+  }
+  .family-strip-inner a:hover {
+    color: var(--orange);
+    text-decoration-color: var(--orange);
+  }
   .contact-box {
     max-width: 560px;
     margin: 0 auto;
@@ -1979,6 +2009,17 @@ l4 7 86 -2 c106 -3 117 -2 132 13 11 10 12 12 12 27 0 12 -2 18 -8 25 -4 6
       </div>
     </div>
   </section>
+
+  <!-- MOODY FAMILY CROSS-PROMO STRIP -->
+  <div class="family-strip">
+    <div class="wrap family-strip-inner">
+      <span class="family-label">Also from the Moody family:</span>
+      <a href="https://markmoodybooks.com/" target="_blank" rel="noopener">Mark Moody Books</a>
+      <a href="https://www.youtube.com/@BuildyBunch" target="_blank" rel="noopener">Buildy Bunch</a>
+      <a href="https://www.youtube.com/@archienoahmoody" target="_blank" rel="noopener">Archie Noah Moody</a>
+      <a href="https://www.youtube.com/@FitnessBoyzOfficial" target="_blank" rel="noopener">Fitness Boyz</a>
+    </div>
+  </div>
 
   <!-- CHARCOAL FOOTER -->
   <footer class="dark-footer">
