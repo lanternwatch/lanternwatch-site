@@ -1,0 +1,39 @@
+# Lantern Watch — https://lanternwatch.org
+# Free, open-source, local-first parental controls for GL.iNet home routers.
+# Every crawler is welcome here, including AI and LLM crawlers.
+
+User-agent: *
+Allow: /
+
+# Named AI / LLM crawlers, listed explicitly so intent is unambiguous.
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+Sitemap: https://lanternwatch.org/sitemap.xml

@@ -1,0 +1,28 @@
+# Lantern Watch
+
+> Free, open-source parental controls that run entirely on a small home router you own. Content filtering, daily screen-time limits, one-tap internet pause, bedtime and focus-hour schedules, and private alerts to a parent's phone. No subscription, no cloud, no account. Built for homeschooling and faith-centered families, and for anyone who wants family internet safety without handing their household's browsing history to a company.
+
+Lantern Watch installs on a GL.iNet home or travel router (tested on GL-MT6000, GL-MT3600BE, GL-MT5000, GL-MT3000, GL-MT2500) and adds a parental-control layer on top of AdGuard Home. All filtering and logging stays on the router, inside the home. The full source is on GitHub under the MIT license.
+
+## How it works, briefly
+
+- Filtering happens at the DNS level, so it protects every device on the network with nothing to install on each phone, tablet, or TV.
+- Because it is DNS-based, it blocks or allows whole sites and apps. It does not inspect content inside an allowed encrypted (HTTPS) app or site, so if a social platform is left enabled, material can still reach a child within that platform. The stricter social profiles, the built-in YouTube Restricted Mode toggle, and pause/schedules are the tools for that.
+- Timed pauses, bedtimes, and focus hours lift themselves automatically, and all settings survive a router reboot or power loss.
+- DNS-bypass protection keeps a device from escaping the filter by changing its own DNS or using encrypted DNS.
+
+## Key pages
+
+- [Home and overview](https://lanternwatch.org/): what it does, full feature list, supported routers, install steps
+- [Comparison](https://lanternwatch.org/compare.html): Lantern Watch versus cloud subscription parental-control services, and versus plain AdGuard Home or Pi-hole
+- [FAQ](https://lanternwatch.org/#faq): running alongside an existing Pi-hole or AdGuard, a VPN on the router, what happens on reboot, game consoles and smart-home devices, and the HTTPS limitation above
+
+## Source and documentation
+
+- [GitHub repository](https://github.com/LanternWatchApp/lantern-watch): source, full README, install script, CHANGELOG, MIT license
+- [Install guide](https://lanternwatch.org/#install): opkg plug-in feed, or a one-line install script
+
+## What it is not
+
+- Not a content-inspection proxy. It is a network-level DNS filter, so it cannot filter individual videos, posts, or messages inside an app or site you have allowed.
+- Not tested on non-GL.iNet routers. Community reports are welcome, but only the listed models are verified.

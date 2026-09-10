@@ -16,6 +16,53 @@
 <title>Lantern Watch — Set it once. Rest easy.</title>
 <meta name="description" content="Free, open-source family parental controls that run entirely on your own home router. No subscriptions, no cloud tracking, no ongoing cost — ever.">
 <link rel="icon" type="image/svg+xml" href="assets/images/lamp.svg">
+<link rel="canonical" href="https://lanternwatch.org/">
+
+<!-- Open Graph / social -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Lantern Watch">
+<meta property="og:title" content="Lantern Watch — Set it once. Rest easy.">
+<meta property="og:description" content="Free, open-source parental controls that run entirely on your own home router. Content filtering, screen-time limits, one-tap pause, and private alerts. No subscription, no cloud, no account.">
+<meta property="og:url" content="https://lanternwatch.org/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Lantern Watch — Set it once. Rest easy.">
+<meta name="twitter:description" content="Free, open-source, local-first parental controls for GL.iNet home routers. No subscription, no cloud.">
+
+<!-- Structured data: helps search engines and AI assistants understand what this is -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Lantern Watch",
+  "alternateName": "Lantern Watch parental controls",
+  "applicationCategory": "SecurityApplication",
+  "applicationSubCategory": "Parental Control Software",
+  "operatingSystem": "OpenWrt (GL.iNet router firmware)",
+  "url": "https://lanternwatch.org",
+  "downloadUrl": "https://github.com/LanternWatchApp/lantern-watch",
+  "softwareHelp": "https://lanternwatch.org/#install",
+  "license": "https://opensource.org/licenses/MIT",
+  "isAccessibleForFree": true,
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "description": "Free, open-source parental controls that run entirely on your own home router. Content filtering, daily screen-time limits, one-tap internet pause, bedtime and focus-hour schedules, and private alerts to a parent's phone. No subscription, no cloud, no account. Filtering works at the DNS level, so it covers every device on the network but does not inspect content inside an allowed HTTPS app.",
+  "featureList": [
+    "DNS-level content filtering for every device on the network, nothing to install per device",
+    "One-tap internet pause with a timer, per device or for the whole family",
+    "Bedtime and focus-hour schedules that lift themselves automatically",
+    "Daily screen-time limits per device",
+    "Social media profiles (Open / Moderate / Strict / Custom) plus a YouTube Restricted Mode toggle",
+    "Private push notifications to a parent's phone via ntfy, Telegram, or email",
+    "Runs locally on a router you own, with no cloud logging",
+    "DNS-bypass protection so the filter cannot be skipped by changing a device's DNS"
+  ],
+  "audience": {
+    "@type": "Audience",
+    "audienceType": "Parents, homeschooling families, churches, camps, and organizations"
+  },
+  "author": { "@type": "Organization", "name": "Lantern Watch", "url": "https://lanternwatch.org" },
+  "publisher": { "@type": "Organization", "name": "Lantern Watch", "url": "https://lanternwatch.org" }
+}
+</script>
 
 <!-- Google Fonts: Inter -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -764,6 +811,54 @@
   .oss-inner h2 { font-size: 1.75rem; margin-bottom: 6px; }
   .oss-inner p { font-size: 0.9375rem; color: var(--body); max-width: 540px; }
 
+  /* FAQ */
+  .faq-list {
+    max-width: 760px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .faq-item {
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 0 20px;
+    transition: border-color 0.15s ease;
+  }
+  .faq-item[open] { border-color: var(--orange-border); }
+  .faq-item summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 18px 0;
+    font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 1.03rem;
+    color: var(--ink);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+  }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item summary::after {
+    content: "+";
+    font-weight: 600;
+    font-size: 1.4rem;
+    color: var(--orange);
+    line-height: 1;
+    flex-shrink: 0;
+  }
+  .faq-item[open] summary::after { content: "\2013"; }
+  .faq-item .faq-body {
+    padding: 0 0 20px;
+    color: var(--body);
+    font-size: 0.95rem;
+    line-height: 1.65;
+  }
+  .faq-item .faq-body p { margin: 0 0 10px; }
+  .faq-item .faq-body p:last-child { margin-bottom: 0; }
+
   /* Contact / Get In Touch Form */
   .contact-section {
     background: var(--bg-page);
@@ -1181,6 +1276,7 @@ l4 7 86 -2 c106 -3 117 -2 132 13 11 10 12 12 12 27 0 12 -2 18 -8 25 -4 6
         <a href="#how">How it works</a>
         <a href="#demo">Demo Videos</a>
         <a href="#routers">Routers</a>
+        <a href="#faq">FAQ</a>
         <a href="#install">Install</a>
         <a href="https://github.com/LanternWatchApp/lantern-watch" target="_blank" rel="noopener">GitHub</a>
       </nav>
@@ -1962,6 +2058,92 @@ l4 7 86 -2 c106 -3 117 -2 132 13 11 10 12 12 12 27 0 12 -2 18 -8 25 -4 6
     </div>
   </section>
 
+  <!-- FAQ -->
+  <section id="faq" style="background: var(--bg-page); border-top: 1px solid var(--line);">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="section-eyebrow">Common questions</div>
+        <h2>Before you install</h2>
+        <p>The questions parents ask most, answered straight.</p>
+      </div>
+
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>Can I use Lantern Watch if I already run Pi-hole or AdGuard Home somewhere else?</summary>
+          <div class="faq-body">
+            <p>Lantern Watch includes and manages its own copy of AdGuard Home on the router, and all filtering happens there. It is built to be the single filter for your whole home, sitting at the front door where every device passes through.</p>
+            <p>Running a second DNS filter behind it (a separate Pi-hole on your network) usually just causes confusion, and Lantern Watch's bypass protection will try to pull devices back to its own filter. If you already have a Pi-hole setup you love, Lantern Watch may be more than you need. If you want pause, schedules, screen-time limits, and alerts on top of filtering, that is exactly the part Pi-hole and plain AdGuard do not do.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Does it still work if I run a VPN on my router?</summary>
+          <div class="faq-body">
+            <p>Yes. A whole-home VPN on the router and Lantern Watch work together. Filtering and schedules are applied before traffic reaches the VPN tunnel, so blocking still happens.</p>
+            <p>One thing to check: if your VPN pushes its own DNS servers, turn that off in the GL.iNet VPN settings so lookups keep going through the filter (or let Lantern Watch's bypass protection handle it). A VPN installed on one child's device, rather than the router, can route around DNS filtering entirely. That is true of any DNS-based tool, and Lantern Watch will alert you when it thinks a device is doing this.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>If I allow a social media app, does Lantern Watch filter what my child sees inside it?</summary>
+          <div class="faq-body">
+            <p>No, and this is important to understand. Lantern Watch works at the DNS level, which lets it block or allow whole sites and apps but not see inside them. Modern apps use encrypted connections (HTTPS), so once you allow YouTube, Instagram, TikTok, or similar, Lantern Watch cannot filter the individual videos, posts, or messages within that platform.</p>
+            <p>The tools that help here are the platform's own restricted modes (Lantern Watch has a one-tap YouTube Restricted Mode), keeping the stricter social profiles turned on, and using pause and schedules so those apps are only reachable at times you choose.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>What happens to filtering and time limits if the router loses power or reboots?</summary>
+          <div class="faq-body">
+            <p>Everything comes back on its own. Filtering, schedules, screen-time limits, and any pause that was running are all restored automatically when the router boots. A bedtime that was in effect stays in effect. A one-hour pause picks up where it left off. There is nothing to re-arm and no window where the network is unprotected after a power blip.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Will it interfere with game consoles, smart-home devices, or my port forwards?</summary>
+          <div class="faq-body">
+            <p>Generally no. Consoles, smart TVs, doorbells, and thermostats keep working normally. They are just filtered for ads, trackers, and known-bad domains like everything else.</p>
+            <p>Lantern Watch never auto-pauses your router, mesh nodes, NAS, or printer, and it labels infrastructure devices so a schedule cannot knock out your network. Port forwards, DDNS, and game console NAT settings live in the GL.iNet router config, and Lantern Watch does not touch them. If one device genuinely needs its own DNS server, there is a per-device toggle to exempt it.</p>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Can I use Lantern Watch if I already run Pi-hole or AdGuard Home somewhere else?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Lantern Watch includes and manages its own AdGuard Home on the router, and all filtering happens there. It is designed to be the single filter for your whole home. Running a second DNS filter behind it usually just causes confusion, and Lantern Watch's bypass protection will try to pull devices back to its own filter. If you want pause, schedules, screen-time limits, and alerts on top of filtering, that is the part Pi-hole and plain AdGuard do not do." }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Lantern Watch still work if I run a VPN on my router?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. A whole-home VPN on the router and Lantern Watch work together, because filtering is applied before traffic reaches the VPN tunnel. If your VPN pushes its own DNS servers, turn that off in the GL.iNet VPN settings so lookups keep going through the filter. A VPN installed on a single child's device, rather than the router, can route around DNS filtering entirely, as with any DNS-based tool, and Lantern Watch will alert you when a device appears to be doing this." }
+      },
+      {
+        "@type": "Question",
+        "name": "If I allow a social media app, does Lantern Watch filter what my child sees inside it?",
+        "acceptedAnswer": { "@type": "Answer", "text": "No. Lantern Watch works at the DNS level, which lets it block or allow whole sites and apps but not see inside them. Modern apps use encrypted HTTPS connections, so once you allow a platform like YouTube, Instagram, or TikTok, Lantern Watch cannot filter individual videos, posts, or messages within it. Use the platform's own restricted modes, the built-in YouTube Restricted Mode toggle, the stricter social profiles, and pause and schedules to limit exposure." }
+      },
+      {
+        "@type": "Question",
+        "name": "What happens to filtering and time limits if the router loses power or reboots?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Everything is restored automatically when the router boots. Filtering, schedules, screen-time limits, and any active pause all come back on their own. A bedtime that was in effect stays in effect, and a timed pause resumes where it left off. There is no window where the network is unprotected after a power blip." }
+      },
+      {
+        "@type": "Question",
+        "name": "Will Lantern Watch interfere with game consoles, smart-home devices, or my port forwards?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Generally no. Consoles, smart TVs, and smart-home devices keep working normally and are simply filtered for ads, trackers, and known-bad domains. Lantern Watch never auto-pauses the router, mesh nodes, NAS, or printer, and it labels infrastructure devices so a schedule cannot take down the network. Port forwards, DDNS, and console NAT settings live in the GL.iNet router config and are not touched. A per-device toggle can exempt a device that genuinely needs its own DNS server." }
+      }
+    ]
+  }
+  </script>
+
   <!-- GET IN TOUCH / CONTACT SECTION -->
   <section id="contact" class="contact-section">
     <div class="wrap">
@@ -2322,6 +2504,7 @@ l4 7 86 -2 c106 -3 117 -2 132 13 11 10 12 12 12 27 0 12 -2 18 -8 25 -4 6
             <li><a href="#how">How it works</a></li>
             <li><a href="#demo">Demo Videos</a></li>
             <li><a href="#routers">Routers</a></li>
+            <li><a href="#faq">FAQ</a></li>
             <li><a href="#install">Installation</a></li>
           </ul>
         </div>
