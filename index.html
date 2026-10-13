@@ -758,11 +758,64 @@
   .install-box h3 { color: #ffffff; font-size: 1.75rem; margin-bottom: 10px; }
   .install-box p.lead { color: #94a3b8; font-size: 1.05rem; margin-bottom: 32px; max-width: 620px; }
   
+  .install-steps-col {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+  }
   .install-steps-row {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 22px;
   }
+  .inst-card--wide {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(232, 160, 0, 0.35);
+    border-radius: var(--radius);
+    padding: 24px 28px;
+  }
+  .inst-card--wide .step-num {
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: var(--orange);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .inst-card--wide h4 { color: #ffffff; font-size: 1.05rem; margin-bottom: 10px; }
+  .inst-card--wide p  { font-size: 0.875rem; color: #cbd5e1; line-height: 1.55; margin-bottom: 12px; }
+  .inst-cmd-wrap {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(0,0,0,0.45);
+    border: 1px solid rgba(232,160,0,0.35);
+    border-radius: 7px;
+    padding: 12px 14px;
+    margin-top: 4px;
+  }
+  .inst-cmd-wrap code {
+    flex: 1;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 0.8rem;
+    color: #fde68a;
+    word-break: break-all;
+    line-height: 1.5;
+  }
+  .inst-copy-btn {
+    flex-shrink: 0;
+    background: rgba(232,160,0,0.18);
+    border: 1px solid rgba(232,160,0,0.5);
+    color: #fde68a;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 5px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background 0.15s;
+  }
+  .inst-copy-btn:hover { background: rgba(232,160,0,0.32); }
   .inst-card {
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.12);
@@ -1952,39 +2005,54 @@ l4 7 86 -2 c106 -3 117 -2 132 13 11 10 12 12 12 27 0 12 -2 18 -8 25 -4 6
       <div class="install-box">
         <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:20px; margin-bottom:28px;">
           <div>
-            <h3>Installing Lantern Watch is as easy as 1-2-3</h3>
-            <p class="lead" style="margin-bottom:0;">Install directly through your GL.iNet router panel with zero command-line tools needed.</p>
+            <h3>Installing Lantern Watch &mdash; 4 simple steps</h3>
+            <p class="lead" style="margin-bottom:0;">One quick terminal command to trust the source, then everything else happens in your router&rsquo;s web panel.</p>
           </div>
           <div>
             <a href="https://github.com/LanternWatchApp/lantern-watch#install" target="_blank" rel="noopener" class="btn btn-primary" style="background:var(--orange); box-shadow:0 4px 14px var(--orange-glow);">
-              Full installation guide →
+              Full installation guide &rarr;
             </a>
           </div>
         </div>
-        
-        <div class="install-steps-row">
-          <div class="inst-card">
+
+        <div class="install-steps-col">
+
+          <div class="inst-card--wide">
             <div class="step-num">Step 1</div>
-            <h4>Add the source</h4>
-            <p style="margin-bottom:8px;">In the GL.iNet panel: <b>Applications → Plug-ins → Manage Sources</b>.</p>
-            <p>Add:<br>
-              Name <span class="inst-code">lanternwatch</span><br>
-              URL <span class="inst-code">https://lanternwatch.org/repo</span><br>
-              then <b>Apply</b>.
-            </p>
+            <h4>Trust the Lantern Watch source <span style="font-size:0.8rem; font-weight:400; color:#94a3b8;">(one-time, ~10 seconds)</span></h4>
+            <p>On <b>Windows</b>, open <b>PowerShell</b> or <b>Command Prompt</b>. On <b>Mac</b>, open <b>Terminal</b>. Paste this command and press Enter, then type your router&rsquo;s admin password when asked:</p>
+            <div class="inst-cmd-wrap">
+              <code id="lw-trust-cmd">ssh root@192.168.8.1 "mkdir -p /etc/opkg/keys &amp;&amp; wget -qO /etc/opkg/keys/76d7eadf2f9134cf https://lanternwatch.org/repo/76d7eadf2f9134cf.pub"</code>
+              <button class="inst-copy-btn" onclick="navigator.clipboard.writeText('ssh root@192.168.8.1 &quot;mkdir -p /etc/opkg/keys &amp;&amp; wget -qO /etc/opkg/keys/76d7eadf2f9134cf https://lanternwatch.org/repo/76d7eadf2f9134cf.pub&quot;').then(()=>{this.textContent='Copied!';setTimeout(()=>this.textContent='Copy',1800)})">Copy</button>
+            </div>
+            <p style="margin-top:10px; margin-bottom:0; font-size:0.8125rem; color:#64748b;">This tells the router to trust packages signed by Lantern Watch. You only need to do it once per router.</p>
           </div>
-          
-          <div class="inst-card">
-            <div class="step-num">Step 2</div>
-            <h4>Install it</h4>
-            <p>Click <b>Refresh</b>, search <span class="inst-code">lanternwatch</span>, and click <b>Install</b>. Give it about two minutes.</p>
+
+          <div class="install-steps-row">
+            <div class="inst-card">
+              <div class="step-num">Step 2</div>
+              <h4>Add the source</h4>
+              <p style="margin-bottom:8px;">In the GL.iNet panel: <b>Applications &rarr; Plug-ins &rarr; Manage Sources</b>.</p>
+              <p>Add:<br>
+                Name <span class="inst-code">lanternwatch</span><br>
+                URL <span class="inst-code">https://lanternwatch.org/repo</span><br>
+                then <b>Apply</b>.
+              </p>
+            </div>
+
+            <div class="inst-card">
+              <div class="step-num">Step 3</div>
+              <h4>Install it</h4>
+              <p>Click <b>Refresh</b>, search <span class="inst-code">lanternwatch</span>, and click <b>Install</b>. Give it about two minutes.</p>
+            </div>
+
+            <div class="inst-card">
+              <div class="step-num">Step 4</div>
+              <h4>Set your password</h4>
+              <p>Open <a href="http://192.168.8.1:8081" target="_blank" rel="noopener" style="color:#fde68a; font-weight:700; text-decoration:underline;">http://192.168.8.1:8081</a> and choose a password. That&rsquo;s it &mdash; protection is already on.</p>
+            </div>
           </div>
-          
-          <div class="inst-card">
-            <div class="step-num">Step 3</div>
-            <h4>Set your password</h4>
-            <p>Open <a href="http://192.168.8.1:8081" target="_blank" rel="noopener" style="color:#fde68a; font-weight:700; text-decoration:underline;">http://192.168.8.1:8081</a> and choose a password. That's it — protection is already on.</p>
-          </div>
+
         </div>
       </div>
     </div>
