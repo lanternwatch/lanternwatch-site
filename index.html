@@ -2019,13 +2019,18 @@ l4 7 86 -2 c106 -3 117 -2 132 13 11 10 12 12 12 27 0 12 -2 18 -8 25 -4 6
 
           <div class="inst-card--wide">
             <div class="step-num">Step 1</div>
-            <h4>Trust the Lantern Watch source <span style="font-size:0.8rem; font-weight:400; color:#94a3b8;">(one-time, ~10 seconds)</span></h4>
-            <p>On <b>Windows</b>, open <b>PowerShell</b> or <b>Command Prompt</b>. On <b>Mac</b>, open <b>Terminal</b>. Paste this command and press Enter, then type your router&rsquo;s admin password when asked:</p>
+            <h4>Trust the Lantern Watch source <span style="font-size:0.8rem; font-weight:400; color:#94a3b8;">(one-time, ~30 seconds)</span></h4>
+            <p style="margin-bottom:6px;"><b>Windows:</b> Press the <b>Windows key</b>, type <b>cmd</b>, and press <b>Enter</b>.<br>
+            <b>Mac:</b> Press <b>Command + Space</b>, type <b>Terminal</b>, and press <b>Enter</b>.</p>
+            <p>Paste this command and press Enter:</p>
             <div class="inst-cmd-wrap">
               <code id="lw-trust-cmd">ssh root@192.168.8.1 "mkdir -p /etc/opkg/keys &amp;&amp; wget -qO /etc/opkg/keys/76d7eadf2f9134cf https://lanternwatch.org/repo/76d7eadf2f9134cf.pub"</code>
               <button class="inst-copy-btn" onclick="navigator.clipboard.writeText('ssh root@192.168.8.1 &quot;mkdir -p /etc/opkg/keys &amp;&amp; wget -qO /etc/opkg/keys/76d7eadf2f9134cf https://lanternwatch.org/repo/76d7eadf2f9134cf.pub&quot;').then(()=>{this.textContent='Copied!';setTimeout(()=>this.textContent='Copy',1800)})">Copy</button>
             </div>
-            <p style="margin-top:10px; margin-bottom:0; font-size:0.8125rem; color:#64748b;">This tells the router to trust packages signed by Lantern Watch. You only need to do it once per router.</p>
+            <p style="margin-top:10px; margin-bottom:0; font-size:0.8125rem; color:#64748b;">
+              If it asks <i>&ldquo;Are you sure you want to continue connecting?&rdquo;</i> &mdash; type <b>yes</b> and press Enter.<br>
+              When it asks for a password, enter your <b>GL.iNet router admin password</b> (the one you set when you first set up the router). Nothing will appear as you type &mdash; that&rsquo;s normal. Press Enter when done.
+            </p>
           </div>
 
           <div class="install-steps-row">
